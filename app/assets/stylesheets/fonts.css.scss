@@ -1,0 +1,16 @@
+/* Fonts */
+@font-face {
+  font-family: 'League Gothic';
+  font-style: normal;
+  src: url('../fonts/leaguegothic-regular-webfont.eot') format('embedded-opentype'),
+  url('../fonts/leaguegothic-regular-webfont.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Jura';
+  font-style: normal;
+  font-weight: 400;
+  src: url(http://themes.googleusercontent.com/static/fonts/jura/v4/pqMzP52_r6zHbOILcX8h-A.woff) format('woff');
+}
+
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab);

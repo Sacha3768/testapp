@@ -1,0 +1,28 @@
+/* NavBar */
+nav ul {
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+  a {
+    display: table-cell;
+    text-align: center;
+    color: darkcyan;
+    font-family: "Anonymous Pro", "Inconsolata", "Menlo", "Consolas", "Bitstream Vera Sans Mono", "Courier New", monospace;
+    font-size: 15px;
+    text-transform: uppercase;
+    &:hover, &.active {
+      background-color: darkcyan;
+      color: white;
+    }
+  }
+  a#linklogo:hover{
+    background-color: white;
+  }
+
+  img#logo {
+    position: relative;
+    top: 15px;
+  }
+}

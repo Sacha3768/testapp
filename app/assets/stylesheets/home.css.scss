@@ -1,0 +1,65 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* jumbotron */
+.jumbotron {
+  background: image-url("wallpaper.png") no-repeat center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%;
+
+  .left-text {
+    padding-top: 100px;
+    .text div{
+      display: none;
+      h2 {
+        font-family: 'Roboto Slab', serif;
+        color: darkcyan;
+        font-size: 35px;
+        position: relative;
+        opacity: 0;
+        left: -250px;
+      }
+      p {
+        position: relative;
+        color: white;
+        font-family: "Open Sans",Arial,sans-serif;
+        opacity: 0;
+        left: 250px;
+      }
+      &:nth-child(1){
+        display: block;
+        p{
+          opacity: 100;
+          left: 0px;
+        }
+        h2{
+          opacity: 100;
+          left: 0px;
+        }
+      }
+    }
+    .circle-pag {
+      text-align: center;
+      padding-top: 10px;
+      button{
+        display: inline-block;
+        border-radius: 100%;
+        width: 20px;
+        height: 20px;
+        background-color: white;
+        border: none;
+        &:focus {
+          outline: none;
+        }
+      }
+      button.active {
+        background-color: darkcyan;
+      }
+    }
+  }
+
+}
