@@ -69,9 +69,20 @@
 .infos {
   text-align: center;
   padding: 75px 0;
-  .fa{
-    font-size: 6em;
+  .widget{
+    padding: 15px;
     color: darkcyan;
-
+    position: relative;
+    transition: 0.5s ease-in-out;
+    -webkit-transition: 0.5s ease-in-out;
+    border: 1px solid darkcyan;
+    &:hover {
+      -webkit-transform: rotateY(180deg); /* Safari */
+      transform: rotateY(180deg);
+    }
+  }
+  hr {
+    border-top-color: darkcyan;
+    width: 60%;
   }
 }
