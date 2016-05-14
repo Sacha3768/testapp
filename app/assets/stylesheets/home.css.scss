@@ -4,12 +4,14 @@
 
 /* jumbotron */
 .jumbotron {
+  min-height: 700px;
   background: image-url("wallpaper.png") no-repeat center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 100%;
+  height: 80%;
+  margin-bottom: 0 !important;
 
   .left-text {
     padding-top: 100px;
@@ -26,7 +28,6 @@
       p {
         position: relative;
         color: white;
-        font-family: "Open Sans",Arial,sans-serif;
         opacity: 0;
         left: 250px;
       }
@@ -62,4 +63,15 @@
     }
   }
 
+}
+
+/* section info */
+.infos {
+  text-align: center;
+  padding: 75px 0;
+  .fa{
+    font-size: 6em;
+    color: darkcyan;
+
+  }
 }

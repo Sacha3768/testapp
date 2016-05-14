@@ -23,29 +23,26 @@ $( document ).ready(function() {
         var newindex = $(this).index() + 1;
         var nowtext = $("div.left-text div.text div:nth-child(" + nowindex + ")");
         var newtext = $("div.left-text div.text div:nth-child(" + newindex + ")");
-        if(nowtext.find("h2").is(":animated") || newtext.find("h2").is(":animated")){
-            console.log("ANIMATION");
-        }
-        else if(nowindex != newindex) {
+        if(nowindex != newindex && !nowtext.find("h2").is(":animated")) {
             $(this).parent().find("button").removeClass("active");
             $(this).addClass("active");
             nowtext.find("h2").animate({
                 opacity: 0,
-                left: "-=250"
+                left: "-250"
             }, 1000);
             nowtext.find("p").animate({
                 opacity: 0,
-                left: "+=250"
+                left: "250"
             }, 1000, function() {
                 nowtext.hide();
                 newtext.show();
                 newtext.find("h2").animate({
                     opacity: 1,
-                    left: "+=250"
+                    left: "0"
                 }, 1000);
                 newtext.find("p").animate({
                     opacity: 1,
-                    left: "-=250"
+                    left: "0"
                 }, 1000);
             });
         }

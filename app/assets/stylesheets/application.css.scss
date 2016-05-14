@@ -15,12 +15,24 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 html, body {
   height: 100%;
+  font-family: "Open Sans",Arial,sans-serif;
 }
 
 /* Links */
 a:hover, a:focus {
   text-decoration: none;
+}
+
+/* Float */
+.right, .right p{
+  float: right;
+}
+
+.left, .left p{
+  float: left;
 }
