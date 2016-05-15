@@ -8,13 +8,15 @@ form{
   text-align: center;
   margin-bottom: 100px;
   input{
+    font-size: 2em;
+    padding-left: 7px;
     line-height: 200%;
     display: block;
     width: 100%;
     margin: 10px auto !important;
-    outline: #EFEFEF solid 1Px;
+    outline: #EFEFEF solid 1px;
     &:focus{
-      outline: #009999 solid 1Px;
+      outline: #009999 solid 2px;
     }
   }
   input[type=submit]{
@@ -36,7 +38,7 @@ form{
     color: white;
     display: block;
     width: 100%;
-    background-color: #ff7474   !important;
+    background-color: chocolate !important;
     outline: 0;
     border-radius: 0;
     &:hover, &:focus, &:active {
