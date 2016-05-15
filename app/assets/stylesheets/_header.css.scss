@@ -5,8 +5,8 @@ nav ul {
   width: 100%;
   display: table;
   table-layout: fixed;
+  min-width: 700px;
   a {
-    min-width: 100px;
     display: table-cell;
     text-align: center;
     color: darkcyan;
