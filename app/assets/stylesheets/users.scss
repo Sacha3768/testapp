@@ -1,3 +1,60 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* Form Register */
+
+form{
+  text-align: center;
+  margin-bottom: 100px;
+  input{
+    line-height: 200%;
+    display: block;
+    width: 100%;
+    margin: 10px auto !important;
+    outline: #EFEFEF solid 1Px;
+    &:focus{
+      outline: #009999 solid 1Px;
+    }
+  }
+  input[type=submit]{
+    margin-top: 25px !important;
+    width: 100%;
+    background-color: darkcyan !important;
+    border: 0 !important;
+    outline: 0;
+    border-radius: 0;
+    &:hover, &:focus, &:active{
+      color: white;
+      outline-color: #009999 !important;
+      border-color: #009999 !important;
+    }
+  }
+  a {
+    padding: 6px 12px !important;
+    border: 0 !important;
+    color: white;
+    display: block;
+    width: 100%;
+    background-color: #ff7474   !important;
+    outline: 0;
+    border-radius: 0;
+    &:hover, &:focus, &:active {
+      color: white;
+    }
+  }
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  .form-control {
+    color: red;
+  }
+}
