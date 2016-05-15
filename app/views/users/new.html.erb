@@ -1,5 +1,22 @@
-<h1>New User</h1>
+<% provide(:title, 'S\'inscrire')%>
 
-<%= render 'form' %>
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <%= form_for(@user) do |f| %>
+            <%= f.label :pseudo %>
+            <%= f.text_field :pseudo %>
 
-<%= link_to 'Back', users_path %>
+            <%= f.label :email %>
+            <%= f.email_field :email %>
+
+            <%= f.label :password, "Mot de passe" %>
+            <%= f.password_field :password %>
+
+            <%= f.label :password_confirmation, "Confirmation du mot de passe" %>
+            <%= f.password_field :password_confirmation %>
+
+            <%= f.submit "S'enregister", class: "btn btn-primary" %>
+            <%= link_to("Déjà enregistré ?", "http://google.com") %>
+        <% end %>
+    </div>
+</div>
