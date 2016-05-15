@@ -1,0 +1,5 @@
+<% provide(:title, 'Liste des membres' )%>
+
+<% @users.each do |user| %>
+    <p><%= user.pseudo %></p>
+<% end %>

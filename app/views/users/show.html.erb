@@ -1,0 +1,11 @@
+<% if(!@user.nil?) %>
+    <% provide(:title, 'Profil de ' + @user.pseudo )%>
+
+    <%= label_tag "Pseudo :" %>
+    <%= @user.pseudo %>
+    <%= label_tag "Email :" %>
+    <%= @user.email %>
+<% else %>
+
+    <% provide(:title, 'Membre introuvable' )%>
+<% end %>
