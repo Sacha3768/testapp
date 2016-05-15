@@ -62820,3 +62820,911 @@ Completed 200 OK in 162ms (Views: 157.5ms | ActiveRecord: 0.5ms)
   [1m[35mUser Exists (1.0ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."pseudo") = LOWER('FooBar') LIMIT 1
   [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('foo@invalid.com') LIMIT 1[0m
   [1m[35m (0.5ms)[0m  ROLLBACK
+
+
+Started POST "/inscription" for ::1 at 2016-05-15 21:59:54 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fBSm85YVnvh84lGyGYhu36v0j50QKoHaY7+rAbbAFrY/xV7gNsLtcNKRDtDU07un2IQ321BBq/fWlNUQrLkdfg==", "user"=>{"pseudo"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'enregister"}
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."pseudo") = LOWER('') LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('') LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  Rendered users/new.html.erb within layouts/application (23.5ms)
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 2.0ms)
+
+ActionView::Template::Error (Missing partial shared/_error_messages with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :jbuilder]}. Searched in:
+  * "C:/Sites/testapp/app/views"
+):
+    3: <div class="row">
+    4:     <div class="col-md-4 col-md-offset-4">
+    5:         <%= form_for(@user) do |f| %>
+    6:             <%= render 'shared/error_messages' %>
+    7: 
+    8:             <%= f.label :pseudo %>
+    9:             <%= f.text_field :pseudo %>
+  app/views/users/new.html.erb:6:in `block in _app_views_users_new_html_erb___453938697_40524360'
+  app/views/users/new.html.erb:5:in `_app_views_users_new_html_erb___453938697_40524360'
+  app/controllers/users_controller.rb:28:in `create'
+
+
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/actionpack-4.2.6/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (611.9ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (551.0ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered C:/RailsInstaller/Ruby2.2.0/lib/ruby/gems/2.2.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (1257.7ms)
+
+
+Started POST "/inscription" for ::1 at 2016-05-15 22:00:20 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fBSm85YVnvh84lGyGYhu36v0j50QKoHaY7+rAbbAFrY/xV7gNsLtcNKRDtDU07un2IQ321BBq/fWlNUQrLkdfg==", "user"=>{"pseudo"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'enregister"}
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."pseudo") = LOWER('') LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('') LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  Rendered users/new.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered layouts/_title.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 197ms (Views: 190.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/inscription" for ::1 at 2016-05-15 22:00:30 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fBSm85YVnvh84lGyGYhu36v0j50QKoHaY7+rAbbAFrY/xV7gNsLtcNKRDtDU07un2IQ321BBq/fWlNUQrLkdfg==", "user"=>{"pseudo"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'enregister"}
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."pseudo") = LOWER('') LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('') LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  Rendered users/new.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_title.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 171ms (Views: 166.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/users.self-9a0b3ae5711384b1039cb4ef23f73b5495175985ff77b74fe0f8e533b4b9a6c7.css?body=1" for ::1 at 2016-05-15 22:00:30 +0200
+
+
+Started GET "/assets/_header.self-f5f1188c10f249cd06ce23eb932c2573b4f1839bd0cdef30c6b9de377dcf0b2d.css?body=1" for ::1 at 2016-05-15 22:00:30 +0200
+
+
+Started GET "/assets/application.self-714e94386127dd2a8146006feb62bddfde45ce0b46b93b576a171d0087a99ac5.css?body=1" for ::1 at 2016-05-15 22:00:30 +0200
+
+
+Started GET "/assets/_footer.self-0e240e4d88cab7c653f02c100cde53723bdbd23ff77bb2cfd25ea18a4c6790f3.css?body=1" for ::1 at 2016-05-15 22:00:30 +0200
+
+
+Started GET "/assets/home.self-7d20fffb9582a5fd97cb502849eb693d1b8a0c64f6dfb1da71da9c2bcbae953f.css?body=1" for ::1 at 2016-05-15 22:00:30 +0200
+
+
+Started GET "/assets/fonts.self-e1f5e9d0a251cc9cf42ee3ca892230feb9f1958aede0e27fd8b7b7db7bef5a70.css?body=1" for ::1 at 2016-05-15 22:00:30 +0200
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-15 22:00:30 +0200
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-15 22:00:30 +0200
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2016-05-15 22:00:30 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-15 22:00:30 +0200
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2016-05-15 22:00:30 +0200
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2016-05-15 22:00:31 +0200
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2016-05-15 22:00:31 +0200
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2016-05-15 22:00:31 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2016-05-15 22:00:31 +0200
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2016-05-15 22:00:31 +0200
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2016-05-15 22:00:31 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2016-05-15 22:00:31 +0200
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2016-05-15 22:00:31 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2016-05-15 22:00:31 +0200
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2016-05-15 22:00:31 +0200
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-05-15 22:00:31 +0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-15 22:00:31 +0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-15 22:00:31 +0200
+
+
+Started GET "/assets/application.self-337e315922a67b2ab11f6931993c2a52210ff43a35d4d4de15f1b7c2deb1d7e4.js?body=1" for ::1 at 2016-05-15 22:00:31 +0200
+
+
+Started GET "/assets/logo-9730db48a34e17ec56c05b5d28c25a52642cc512c2e9e590f1a46bcda7d657d0.png" for ::1 at 2016-05-15 22:00:31 +0200
+
+
+Started GET "/" for ::1 at 2016-05-15 22:00:35 +0200
+Processing by HomeController#index as HTML
+  Rendered home/index.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 154ms (Views: 154.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/inscription" for ::1 at 2016-05-15 22:00:39 +0200
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_title.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 157ms (Views: 156.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/inscription" for ::1 at 2016-05-15 22:00:57 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5ImzBf4H54ciWk4Ta4k8CCCVOwzyRMvOkL00waUx8RCnWEsWXtCUD4wpEXGm0ulwU+WDSrIv4eMllkrQv0j62A==", "user"=>{"pseudo"=>"Sacha3", "email"=>"sachloic00@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'enregister"}
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."pseudo") = LOWER('Sacha3') LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('sachloic00@gmail.com') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "users" ("pseudo", "email", "password_digest", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["pseudo", "Sacha3"], ["email", "sachloic00@gmail.com"], ["password_digest", "$2a$10$QgddHsoXH10Vaec.0ZqGcu9hi.P5UDA0NEEylYfqNqcSzTieB7ETq"], ["created_at", "2016-05-15 20:00:57.515270"], ["updated_at", "2016-05-15 20:00:57.515270"]]
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/membres/Sacha3
+Completed 302 Found in 67ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/membres/Sacha3" for ::1 at 2016-05-15 22:00:57 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"pseudo"=>"Sacha3"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."pseudo" = $1 LIMIT 1[0m  [["pseudo", "Sacha3"]]
+  Rendered users/show.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.0ms)
+  Rendered layouts/_title.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 157ms (Views: 155.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/inscription" for ::1 at 2016-05-15 22:01:01 +0200
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_title.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 159ms (Views: 159.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/inscription" for ::1 at 2016-05-15 22:01:03 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zhka00x0eof6ww4sIT+EoVQzekE8IMqnaAbGQtQAPpqNyOLA7KMJD1SwUU7sZFHZJ0PCB3xL4IrdLbhTznk1Ug==", "user"=>{"pseudo"=>"Sacha3", "email"=>"sachloic00@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'enregister"}
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."pseudo") = LOWER('Sacha3') LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('sachloic00@gmail.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  Rendered users/new.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_title.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 154ms (Views: 149.4ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/inscription" for ::1 at 2016-05-15 22:02:32 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zhka00x0eof6ww4sIT+EoVQzekE8IMqnaAbGQtQAPpqNyOLA7KMJD1SwUU7sZFHZJ0PCB3xL4IrdLbhTznk1Ug==", "user"=>{"pseudo"=>"Sacha3", "email"=>"sachloic00@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'enregister"}
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."pseudo") = LOWER('Sacha3') LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('sachloic00@gmail.com') LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  Rendered users/new.html.erb within layouts/application (3.5ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_title.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 177ms (Views: 173.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/_footer.self-0e240e4d88cab7c653f02c100cde53723bdbd23ff77bb2cfd25ea18a4c6790f3.css?body=1" for ::1 at 2016-05-15 22:02:33 +0200
+
+
+Started GET "/assets/_header.self-f5f1188c10f249cd06ce23eb932c2573b4f1839bd0cdef30c6b9de377dcf0b2d.css?body=1" for ::1 at 2016-05-15 22:02:33 +0200
+
+
+Started GET "/assets/home.self-7d20fffb9582a5fd97cb502849eb693d1b8a0c64f6dfb1da71da9c2bcbae953f.css?body=1" for ::1 at 2016-05-15 22:02:33 +0200
+
+
+Started GET "/assets/application.self-714e94386127dd2a8146006feb62bddfde45ce0b46b93b576a171d0087a99ac5.css?body=1" for ::1 at 2016-05-15 22:02:33 +0200
+
+
+Started GET "/assets/fonts.self-e1f5e9d0a251cc9cf42ee3ca892230feb9f1958aede0e27fd8b7b7db7bef5a70.css?body=1" for ::1 at 2016-05-15 22:02:33 +0200
+
+
+Started GET "/assets/users.self-9a0b3ae5711384b1039cb4ef23f73b5495175985ff77b74fe0f8e533b4b9a6c7.css?body=1" for ::1 at 2016-05-15 22:02:33 +0200
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-15 22:02:33 +0200
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-15 22:02:33 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-15 22:02:33 +0200
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2016-05-15 22:02:33 +0200
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2016-05-15 22:02:33 +0200
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2016-05-15 22:02:33 +0200
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2016-05-15 22:02:33 +0200
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2016-05-15 22:02:33 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2016-05-15 22:02:33 +0200
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2016-05-15 22:02:33 +0200
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2016-05-15 22:02:33 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2016-05-15 22:02:33 +0200
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2016-05-15 22:02:33 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2016-05-15 22:02:33 +0200
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2016-05-15 22:02:33 +0200
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-05-15 22:02:33 +0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-15 22:02:33 +0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-15 22:02:33 +0200
+
+
+Started GET "/assets/application.self-337e315922a67b2ab11f6931993c2a52210ff43a35d4d4de15f1b7c2deb1d7e4.js?body=1" for ::1 at 2016-05-15 22:02:33 +0200
+
+
+Started GET "/assets/logo-9730db48a34e17ec56c05b5d28c25a52642cc512c2e9e590f1a46bcda7d657d0.png" for ::1 at 2016-05-15 22:02:33 +0200
+
+
+Started POST "/inscription" for ::1 at 2016-05-15 22:03:06 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zhka00x0eof6ww4sIT+EoVQzekE8IMqnaAbGQtQAPpqNyOLA7KMJD1SwUU7sZFHZJ0PCB3xL4IrdLbhTznk1Ug==", "user"=>{"pseudo"=>"Sacha3", "email"=>"sachloic00@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'enregister"}
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."pseudo") = LOWER('Sacha3') LIMIT 1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('sachloic00@gmail.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  Rendered users/new.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (2.5ms)
+  Rendered layouts/_title.html.erb (0.5ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 187ms (Views: 182.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/_footer.self-0e240e4d88cab7c653f02c100cde53723bdbd23ff77bb2cfd25ea18a4c6790f3.css?body=1" for ::1 at 2016-05-15 22:03:06 +0200
+
+
+Started GET "/assets/_header.self-f5f1188c10f249cd06ce23eb932c2573b4f1839bd0cdef30c6b9de377dcf0b2d.css?body=1" for ::1 at 2016-05-15 22:03:06 +0200
+
+
+Started GET "/assets/fonts.self-e1f5e9d0a251cc9cf42ee3ca892230feb9f1958aede0e27fd8b7b7db7bef5a70.css?body=1" for ::1 at 2016-05-15 22:03:06 +0200
+
+
+Started GET "/assets/home.self-7d20fffb9582a5fd97cb502849eb693d1b8a0c64f6dfb1da71da9c2bcbae953f.css?body=1" for ::1 at 2016-05-15 22:03:06 +0200
+
+
+Started GET "/assets/users.self-9a0b3ae5711384b1039cb4ef23f73b5495175985ff77b74fe0f8e533b4b9a6c7.css?body=1" for ::1 at 2016-05-15 22:03:06 +0200
+
+
+Started GET "/assets/application.self-714e94386127dd2a8146006feb62bddfde45ce0b46b93b576a171d0087a99ac5.css?body=1" for ::1 at 2016-05-15 22:03:06 +0200
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-15 22:03:06 +0200
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-15 22:03:06 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-15 22:03:06 +0200
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2016-05-15 22:03:06 +0200
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2016-05-15 22:03:06 +0200
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2016-05-15 22:03:06 +0200
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2016-05-15 22:03:06 +0200
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2016-05-15 22:03:06 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2016-05-15 22:03:06 +0200
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2016-05-15 22:03:06 +0200
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2016-05-15 22:03:06 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2016-05-15 22:03:06 +0200
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2016-05-15 22:03:06 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2016-05-15 22:03:06 +0200
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2016-05-15 22:03:06 +0200
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-05-15 22:03:06 +0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-15 22:03:06 +0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-15 22:03:06 +0200
+
+
+Started GET "/assets/application.self-337e315922a67b2ab11f6931993c2a52210ff43a35d4d4de15f1b7c2deb1d7e4.js?body=1" for ::1 at 2016-05-15 22:03:06 +0200
+
+
+Started GET "/assets/logo-9730db48a34e17ec56c05b5d28c25a52642cc512c2e9e590f1a46bcda7d657d0.png" for ::1 at 2016-05-15 22:03:07 +0200
+
+
+Started POST "/inscription" for ::1 at 2016-05-15 22:05:54 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zhka00x0eof6ww4sIT+EoVQzekE8IMqnaAbGQtQAPpqNyOLA7KMJD1SwUU7sZFHZJ0PCB3xL4IrdLbhTznk1Ug==", "user"=>{"pseudo"=>"Sacha3", "email"=>"sachloic00@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'enregister"}
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."pseudo") = LOWER('Sacha3') LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('sachloic00@gmail.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  Rendered users/new.html.erb within layouts/application (3.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_title.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 4243ms (Views: 4237.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/_footer.self-0e240e4d88cab7c653f02c100cde53723bdbd23ff77bb2cfd25ea18a4c6790f3.css?body=1" for ::1 at 2016-05-15 22:05:58 +0200
+
+
+Started GET "/assets/_header.self-f5f1188c10f249cd06ce23eb932c2573b4f1839bd0cdef30c6b9de377dcf0b2d.css?body=1" for ::1 at 2016-05-15 22:05:58 +0200
+
+
+Started GET "/assets/users.self-731cea3e34c84f9d9e01ed869f87a00d723b38a8d4460fb728a55f24813ec1b2.css?body=1" for ::1 at 2016-05-15 22:05:58 +0200
+
+
+Started GET "/assets/fonts.self-e1f5e9d0a251cc9cf42ee3ca892230feb9f1958aede0e27fd8b7b7db7bef5a70.css?body=1" for ::1 at 2016-05-15 22:05:58 +0200
+
+
+Started GET "/assets/home.self-7d20fffb9582a5fd97cb502849eb693d1b8a0c64f6dfb1da71da9c2bcbae953f.css?body=1" for ::1 at 2016-05-15 22:05:58 +0200
+
+
+Started GET "/assets/application.self-714e94386127dd2a8146006feb62bddfde45ce0b46b93b576a171d0087a99ac5.css?body=1" for ::1 at 2016-05-15 22:05:58 +0200
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-15 22:05:58 +0200
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-15 22:05:58 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-15 22:05:58 +0200
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2016-05-15 22:05:58 +0200
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2016-05-15 22:05:58 +0200
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2016-05-15 22:05:58 +0200
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2016-05-15 22:05:58 +0200
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2016-05-15 22:05:58 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2016-05-15 22:05:58 +0200
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2016-05-15 22:05:58 +0200
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2016-05-15 22:05:58 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2016-05-15 22:05:58 +0200
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2016-05-15 22:05:58 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2016-05-15 22:05:58 +0200
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2016-05-15 22:05:58 +0200
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-05-15 22:05:58 +0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-15 22:05:58 +0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-15 22:05:58 +0200
+
+
+Started GET "/assets/application.self-337e315922a67b2ab11f6931993c2a52210ff43a35d4d4de15f1b7c2deb1d7e4.js?body=1" for ::1 at 2016-05-15 22:05:58 +0200
+
+
+Started GET "/assets/logo-9730db48a34e17ec56c05b5d28c25a52642cc512c2e9e590f1a46bcda7d657d0.png" for ::1 at 2016-05-15 22:05:58 +0200
+
+
+Started POST "/inscription" for ::1 at 2016-05-15 22:42:22 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zhka00x0eof6ww4sIT+EoVQzekE8IMqnaAbGQtQAPpqNyOLA7KMJD1SwUU7sZFHZJ0PCB3xL4IrdLbhTznk1Ug==", "user"=>{"pseudo"=>"Sacha3", "email"=>"sachloic00@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'enregister"}
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mUser Exists (1.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."pseudo") = LOWER('Sacha3') LIMIT 1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('sachloic00@gmail.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  Rendered users/new.html.erb within layouts/application (5.5ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_title.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 220ms (Views: 196.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/_footer.self-0e240e4d88cab7c653f02c100cde53723bdbd23ff77bb2cfd25ea18a4c6790f3.css?body=1" for ::1 at 2016-05-15 22:42:23 +0200
+
+
+Started GET "/assets/_header.self-f5f1188c10f249cd06ce23eb932c2573b4f1839bd0cdef30c6b9de377dcf0b2d.css?body=1" for ::1 at 2016-05-15 22:42:23 +0200
+
+
+Started GET "/assets/home.self-7d20fffb9582a5fd97cb502849eb693d1b8a0c64f6dfb1da71da9c2bcbae953f.css?body=1" for ::1 at 2016-05-15 22:42:23 +0200
+
+
+Started GET "/assets/logo-9730db48a34e17ec56c05b5d28c25a52642cc512c2e9e590f1a46bcda7d657d0.png" for ::1 at 2016-05-15 22:42:23 +0200
+
+
+Started POST "/inscription" for ::1 at 2016-05-15 22:42:27 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zhka00x0eof6ww4sIT+EoVQzekE8IMqnaAbGQtQAPpqNyOLA7KMJD1SwUU7sZFHZJ0PCB3xL4IrdLbhTznk1Ug==", "user"=>{"pseudo"=>"Sacha3", "email"=>"sachloic00@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'enregister"}
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mUser Exists (1.4ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."pseudo") = LOWER('Sacha3') LIMIT 1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('sachloic00@gmail.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  Rendered users/new.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_title.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 169ms (Views: 163.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/fonts.self-e1f5e9d0a251cc9cf42ee3ca892230feb9f1958aede0e27fd8b7b7db7bef5a70.css?body=1" for ::1 at 2016-05-15 22:42:27 +0200
+
+
+Started GET "/assets/_header.self-f5f1188c10f249cd06ce23eb932c2573b4f1839bd0cdef30c6b9de377dcf0b2d.css?body=1" for ::1 at 2016-05-15 22:42:27 +0200
+
+
+Started GET "/assets/_footer.self-0e240e4d88cab7c653f02c100cde53723bdbd23ff77bb2cfd25ea18a4c6790f3.css?body=1" for ::1 at 2016-05-15 22:42:27 +0200
+
+
+Started GET "/assets/home.self-7d20fffb9582a5fd97cb502849eb693d1b8a0c64f6dfb1da71da9c2bcbae953f.css?body=1" for ::1 at 2016-05-15 22:42:27 +0200
+
+
+Started GET "/assets/users.self-731cea3e34c84f9d9e01ed869f87a00d723b38a8d4460fb728a55f24813ec1b2.css?body=1" for ::1 at 2016-05-15 22:42:27 +0200
+
+
+Started GET "/assets/application.self-714e94386127dd2a8146006feb62bddfde45ce0b46b93b576a171d0087a99ac5.css?body=1" for ::1 at 2016-05-15 22:42:27 +0200
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-15 22:42:27 +0200
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-15 22:42:27 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-15 22:42:27 +0200
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2016-05-15 22:42:27 +0200
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2016-05-15 22:42:27 +0200
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2016-05-15 22:42:27 +0200
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2016-05-15 22:42:27 +0200
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2016-05-15 22:42:27 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2016-05-15 22:42:27 +0200
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2016-05-15 22:42:27 +0200
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2016-05-15 22:42:27 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2016-05-15 22:42:27 +0200
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2016-05-15 22:42:27 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2016-05-15 22:42:27 +0200
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2016-05-15 22:42:27 +0200
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-05-15 22:42:27 +0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-15 22:42:27 +0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-15 22:42:27 +0200
+
+
+Started GET "/assets/application.self-337e315922a67b2ab11f6931993c2a52210ff43a35d4d4de15f1b7c2deb1d7e4.js?body=1" for ::1 at 2016-05-15 22:42:27 +0200
+
+
+Started GET "/assets/logo-9730db48a34e17ec56c05b5d28c25a52642cc512c2e9e590f1a46bcda7d657d0.png" for ::1 at 2016-05-15 22:42:27 +0200
+
+
+Started POST "/inscription" for ::1 at 2016-05-15 22:42:46 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zhka00x0eof6ww4sIT+EoVQzekE8IMqnaAbGQtQAPpqNyOLA7KMJD1SwUU7sZFHZJ0PCB3xL4IrdLbhTznk1Ug==", "user"=>{"pseudo"=>"Sacha3", "email"=>"sachloic00@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'enregister"}
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."pseudo") = LOWER('Sacha3') LIMIT 1[0m
+  [1m[35mUser Exists (0.0ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('sachloic00@gmail.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  Rendered users/new.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_title.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 181ms (Views: 175.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/_footer.self-0e240e4d88cab7c653f02c100cde53723bdbd23ff77bb2cfd25ea18a4c6790f3.css?body=1" for ::1 at 2016-05-15 22:42:47 +0200
+
+
+Started GET "/assets/users.self-731cea3e34c84f9d9e01ed869f87a00d723b38a8d4460fb728a55f24813ec1b2.css?body=1" for ::1 at 2016-05-15 22:42:47 +0200
+
+
+Started GET "/assets/_header.self-f5f1188c10f249cd06ce23eb932c2573b4f1839bd0cdef30c6b9de377dcf0b2d.css?body=1" for ::1 at 2016-05-15 22:42:47 +0200
+
+
+Started GET "/assets/application.self-714e94386127dd2a8146006feb62bddfde45ce0b46b93b576a171d0087a99ac5.css?body=1" for ::1 at 2016-05-15 22:42:47 +0200
+
+
+Started GET "/assets/home.self-7d20fffb9582a5fd97cb502849eb693d1b8a0c64f6dfb1da71da9c2bcbae953f.css?body=1" for ::1 at 2016-05-15 22:42:47 +0200
+
+
+Started GET "/assets/fonts.self-e1f5e9d0a251cc9cf42ee3ca892230feb9f1958aede0e27fd8b7b7db7bef5a70.css?body=1" for ::1 at 2016-05-15 22:42:47 +0200
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-15 22:42:47 +0200
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-15 22:42:47 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-15 22:42:47 +0200
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2016-05-15 22:42:47 +0200
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2016-05-15 22:42:47 +0200
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2016-05-15 22:42:47 +0200
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2016-05-15 22:42:47 +0200
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2016-05-15 22:42:47 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2016-05-15 22:42:47 +0200
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2016-05-15 22:42:47 +0200
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2016-05-15 22:42:47 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2016-05-15 22:42:47 +0200
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2016-05-15 22:42:47 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2016-05-15 22:42:47 +0200
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2016-05-15 22:42:47 +0200
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-05-15 22:42:47 +0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-15 22:42:47 +0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-15 22:42:47 +0200
+
+
+Started GET "/assets/application.self-337e315922a67b2ab11f6931993c2a52210ff43a35d4d4de15f1b7c2deb1d7e4.js?body=1" for ::1 at 2016-05-15 22:42:47 +0200
+
+
+Started GET "/assets/logo-9730db48a34e17ec56c05b5d28c25a52642cc512c2e9e590f1a46bcda7d657d0.png" for ::1 at 2016-05-15 22:42:47 +0200
+
+
+Started POST "/inscription" for ::1 at 2016-05-15 22:42:51 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zhka00x0eof6ww4sIT+EoVQzekE8IMqnaAbGQtQAPpqNyOLA7KMJD1SwUU7sZFHZJ0PCB3xL4IrdLbhTznk1Ug==", "user"=>{"pseudo"=>"Sacha3", "email"=>"sachloic00@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'enregister"}
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mUser Exists (0.0ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."pseudo") = LOWER('Sacha3') LIMIT 1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('sachloic00@gmail.com') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mROLLBACK[0m
+  Rendered users/new.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_title.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 182ms (Views: 176.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/_footer.self-0e240e4d88cab7c653f02c100cde53723bdbd23ff77bb2cfd25ea18a4c6790f3.css?body=1" for ::1 at 2016-05-15 22:42:52 +0200
+
+
+Started GET "/assets/fonts.self-e1f5e9d0a251cc9cf42ee3ca892230feb9f1958aede0e27fd8b7b7db7bef5a70.css?body=1" for ::1 at 2016-05-15 22:42:52 +0200
+
+
+Started GET "/assets/home.self-7d20fffb9582a5fd97cb502849eb693d1b8a0c64f6dfb1da71da9c2bcbae953f.css?body=1" for ::1 at 2016-05-15 22:42:52 +0200
+
+
+Started GET "/assets/_header.self-f5f1188c10f249cd06ce23eb932c2573b4f1839bd0cdef30c6b9de377dcf0b2d.css?body=1" for ::1 at 2016-05-15 22:42:52 +0200
+
+
+Started GET "/assets/application.self-714e94386127dd2a8146006feb62bddfde45ce0b46b93b576a171d0087a99ac5.css?body=1" for ::1 at 2016-05-15 22:42:52 +0200
+
+
+Started GET "/assets/users.self-731cea3e34c84f9d9e01ed869f87a00d723b38a8d4460fb728a55f24813ec1b2.css?body=1" for ::1 at 2016-05-15 22:42:52 +0200
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-15 22:42:52 +0200
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-15 22:42:52 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-15 22:42:52 +0200
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2016-05-15 22:42:52 +0200
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2016-05-15 22:42:52 +0200
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2016-05-15 22:42:52 +0200
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2016-05-15 22:42:52 +0200
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2016-05-15 22:42:52 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2016-05-15 22:42:52 +0200
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2016-05-15 22:42:52 +0200
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2016-05-15 22:42:52 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2016-05-15 22:42:52 +0200
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2016-05-15 22:42:52 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2016-05-15 22:42:52 +0200
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2016-05-15 22:42:52 +0200
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-05-15 22:42:52 +0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-15 22:42:52 +0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-15 22:42:52 +0200
+
+
+Started GET "/assets/application.self-337e315922a67b2ab11f6931993c2a52210ff43a35d4d4de15f1b7c2deb1d7e4.js?body=1" for ::1 at 2016-05-15 22:42:52 +0200
+
+
+Started GET "/assets/logo-9730db48a34e17ec56c05b5d28c25a52642cc512c2e9e590f1a46bcda7d657d0.png" for ::1 at 2016-05-15 22:42:52 +0200
+
+
+Started POST "/inscription" for ::1 at 2016-05-15 22:43:39 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FBsr+cOvs52z8+2Gwb5OmNnErscHY1thmLzBWhIqXuVXytPqY3jAFR2AsuQM5ZvgqrQWgUcIcUwtl79LCFNVLQ==", "user"=>{"pseudo"=>"Sacha3", "email"=>"sachloic00@gmail", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'enregister"}
+  [1m[35m (0.0ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."pseudo") = LOWER('Sacha3') LIMIT 1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('sachloic00@gmail') LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  Rendered users/new.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_title.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 161ms (Views: 156.7ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/inscription" for ::1 at 2016-05-15 22:44:04 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FBsr+cOvs52z8+2Gwb5OmNnErscHY1thmLzBWhIqXuVXytPqY3jAFR2AsuQM5ZvgqrQWgUcIcUwtl79LCFNVLQ==", "user"=>{"pseudo"=>"Sacha3", "email"=>"sachloic00@gmail", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"S'enregister"}
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users" WHERE LOWER("users"."pseudo") = LOWER('Sacha3') LIMIT 1[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('sachloic00@gmail') LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mROLLBACK[0m
+  Rendered users/new.html.erb within layouts/application (2.4ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_title.html.erb (0.0ms)
+  Rendered layouts/_footer.html.erb (0.0ms)
+Completed 200 OK in 4191ms (Views: 4186.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/_footer.self-0e240e4d88cab7c653f02c100cde53723bdbd23ff77bb2cfd25ea18a4c6790f3.css?body=1" for ::1 at 2016-05-15 22:44:08 +0200
+
+
+Started GET "/assets/_header.self-f5f1188c10f249cd06ce23eb932c2573b4f1839bd0cdef30c6b9de377dcf0b2d.css?body=1" for ::1 at 2016-05-15 22:44:08 +0200
+
+
+Started GET "/assets/fonts.self-e1f5e9d0a251cc9cf42ee3ca892230feb9f1958aede0e27fd8b7b7db7bef5a70.css?body=1" for ::1 at 2016-05-15 22:44:08 +0200
+
+
+Started GET "/assets/home.self-7d20fffb9582a5fd97cb502849eb693d1b8a0c64f6dfb1da71da9c2bcbae953f.css?body=1" for ::1 at 2016-05-15 22:44:08 +0200
+
+
+Started GET "/assets/users.self-acc413e79daa188bc096364d7b6650116e1499fcf5bbcdaf56b86ca43621d89d.css?body=1" for ::1 at 2016-05-15 22:44:08 +0200
+
+
+Started GET "/assets/application.self-714e94386127dd2a8146006feb62bddfde45ce0b46b93b576a171d0087a99ac5.css?body=1" for ::1 at 2016-05-15 22:44:08 +0200
+
+
+Started GET "/assets/jquery.self-660adc51e0224b731d29f575a6f1ec167ba08ad06ed5deca4f1e8654c135bf4c.js?body=1" for ::1 at 2016-05-15 22:44:08 +0200
+
+
+Started GET "/assets/jquery_ujs.self-e87806d0cf4489aeb1bb7288016024e8de67fd18db693fe026fe3907581e53cd.js?body=1" for ::1 at 2016-05-15 22:44:08 +0200
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2016-05-15 22:44:08 +0200
+
+
+Started GET "/assets/bootstrap/affix.self-d2b642d8fbfc1d7041e2edefd66683ada567a980789dcd6f94fddda0b33408b5.js?body=1" for ::1 at 2016-05-15 22:44:08 +0200
+
+
+Started GET "/assets/bootstrap/alert.self-a29e91e8cd3ddaba9bbc466901d53ec2127e9256b9b941905d525a3a716bd1a5.js?body=1" for ::1 at 2016-05-15 22:44:08 +0200
+
+
+Started GET "/assets/bootstrap/button.self-a6cb16785434acb365ae426aef9f1fce05ed553cae7a965e4471c3da71509175.js?body=1" for ::1 at 2016-05-15 22:44:08 +0200
+
+
+Started GET "/assets/bootstrap/carousel.self-57eb8422043cf0a85b7a9dc6843916eb0a3e35b419c7798a5eb254b918997631.js?body=1" for ::1 at 2016-05-15 22:44:08 +0200
+
+
+Started GET "/assets/bootstrap/collapse.self-7dc8bfbc2fbfabd2bad62c58ff8ffeaf8f20fb87c7ca6cd35f06d4dc19632587.js?body=1" for ::1 at 2016-05-15 22:44:08 +0200
+
+
+Started GET "/assets/bootstrap/dropdown.self-9314126777c6be5443e37ea7f7967d7914d72b3e60449ba50edc967446373059.js?body=1" for ::1 at 2016-05-15 22:44:08 +0200
+
+
+Started GET "/assets/bootstrap/tab.self-122235057fbd4c6c7da377d59dc58f47b44cb1088a2e38e6ee6ce9d8ac29a26a.js?body=1" for ::1 at 2016-05-15 22:44:08 +0200
+
+
+Started GET "/assets/bootstrap/transition.self-09ff30b1e8a93d1f7728b9855f55d9c9d8d5734c8861e0d8139994e50944572a.js?body=1" for ::1 at 2016-05-15 22:44:08 +0200
+
+
+Started GET "/assets/bootstrap/scrollspy.self-a155b9d4b2f978905f0326c0f6635e1134fe91c6bfbfcbad079fa24a9fef2b0e.js?body=1" for ::1 at 2016-05-15 22:44:08 +0200
+
+
+Started GET "/assets/bootstrap/modal.self-72f95ffa1071297725a9ac91989693d56d1abf23f441a47455073b0da2857a5b.js?body=1" for ::1 at 2016-05-15 22:44:08 +0200
+
+
+Started GET "/assets/bootstrap/tooltip.self-11cf547be953f25f511cec668f6690473fd97b2f65502e4032f4030999a3f0c3.js?body=1" for ::1 at 2016-05-15 22:44:08 +0200
+
+
+Started GET "/assets/bootstrap/popover.self-77d8e3a2499c1104ef146396a68b82469ee2bdb365199b874694698d10405e9a.js?body=1" for ::1 at 2016-05-15 22:44:08 +0200
+
+
+Started GET "/assets/bootstrap-sprockets.self-fbfa5ad7d9aa0afe439ec4ff3883acc4cb92b62cb67c40d674320c9aa1d4642d.js?body=1" for ::1 at 2016-05-15 22:44:08 +0200
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-15 22:44:08 +0200
+
+
+Started GET "/assets/users.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-05-15 22:44:08 +0200
+
+
+Started GET "/assets/application.self-337e315922a67b2ab11f6931993c2a52210ff43a35d4d4de15f1b7c2deb1d7e4.js?body=1" for ::1 at 2016-05-15 22:44:08 +0200
+
+
+Started GET "/assets/logo-9730db48a34e17ec56c05b5d28c25a52642cc512c2e9e590f1a46bcda7d657d0.png" for ::1 at 2016-05-15 22:44:08 +0200
