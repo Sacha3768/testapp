@@ -23,6 +23,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      log_in @user
       redirect_to user_url(@user.pseudo)
       flash[:success] = "Bienvenue sur " + $NAME_SERVER
     else

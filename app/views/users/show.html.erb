@@ -1,5 +1,6 @@
 <% if(!@user.nil?) %>
     <% provide(:title, 'Profil de ' + @user.pseudo )%>
+    <%= render('layouts/flash') %>
 
     <%= label_tag "Pseudo :" %>
     <%= @user.pseudo %>
