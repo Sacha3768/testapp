@@ -1,35 +1,74 @@
 /* NavBar */
-nav ul {
-  padding: 0px;
-  margin: 0px;
-  width: 100%;
-  display: table;
-  table-layout: fixed;
-  min-width: 700px;
-  a {
-    display: table-cell;
+nav {
+  ul.navul{
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    min-width: 700px;
     text-align: center;
-    color: darkcyan;
-    font-family: "Anonymous Pro", "Inconsolata", "Menlo", "Consolas", "Bitstream Vera Sans Mono", "Courier New", monospace;
-    font-size: 15px;
-    text-transform: uppercase;
-    &:hover, &.active {
-      background-color: darkcyan;
+    .dropdown {
+      min-width: 100px;
+      display: table-cell;
+      color: darkcyan;
+      font-family: "Anonymous Pro", "Inconsolata", "Menlo", "Consolas", "Bitstream Vera Sans Mono", "Courier New", monospace;
+      font-size: 15px;
+      text-transform: uppercase;
+      &:hover, &.active {
+        background-color: darkcyan;
+        color: white;
+      }
+    }
+
+    .dropdown-menu {
+      border-radius:0px;
+      box-shadow:none;
+      border:none;
+      top: 98%;
+      width: 100%;
+    }
+
+    .dropdown-menu li {
+      margin-left: 0;
+      float:none;
+    }
+
+    .dropdown-menu li a {
+      color: darkcyan;
+      padding: 5px 0;
+      text-align: center;
+      display: block;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color:darkcyan;
       color: white;
     }
-  }
-  a#linklogo:hover{
-    background-color: white;
+    a{
+      text-align: center;
+      display: table-cell;
+      color: darkcyan;
+      font-family: "Anonymous Pro", "Inconsolata", "Menlo", "Consolas", "Bitstream Vera Sans Mono", "Courier New", monospace;
+      font-size: 15px;
+      text-transform: uppercase;
+      &:hover, &.active {
+        background-color: darkcyan;
+        color: white;
+      }
+    }
+    a#linklogo:hover{
+      background-color: white;
+    }
+
+    img#logo {
+      position: relative;
+      top: 15px;
+    }
   }
 
-  img#logo {
-    position: relative;
-    top: 15px;
-  }
 }
-
-
-.title{
+.title {
   margin: 50px 0;
   h1 {
     width: 40%;
@@ -40,3 +79,4 @@ nav ul {
     padding: 20px;
   }
 }
+

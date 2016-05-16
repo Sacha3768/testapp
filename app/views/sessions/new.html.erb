@@ -1,0 +1,52 @@
+<% provide(:title, 'Connexion' )%>
+
+<div class="row">
+    <div class="col-md-8 col-md-offset-4">
+        <%= form_for(:session, url: login_path) do |f| %>
+            <div class="row">
+                <div class="col-md-6">
+                    <%= render('layouts/flash') %>
+                </div>
+            </div>
+
+            <%= f.label :pseudo %>
+
+            <!-- Nesting Starts  -->
+            <div class="row">
+                <div class="col-md-6">
+                    <%= f.text_field :pseudo %>
+                </div>
+            </div>
+
+            <%= f.label :password %>
+
+            <!-- Nesting Starts  -->
+            <div class="row">
+                <div class="col-md-6">
+                    <%= f.password_field :password %>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <%= f.label :remember_me, class: "checkbox inline" do %>
+                        <%= f.check_box :remember_me %>
+                        <span>Se souvenir de moi ?</span>
+                    <% end %>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <%= f.submit "Se connecter", class: "btn btn-primary" %>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <%= link_to("Pas encore enregistré ?", signup_path) %>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>

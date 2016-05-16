@@ -20,7 +20,7 @@ form{
 
   input[type=submit]{
     width: 100%;
-    margin-top: 25px !important;
+    margin-top: 10px !important;
     background-color: darkcyan !important;
     border: 0 !important;
     outline: 0;
@@ -29,6 +29,16 @@ form{
       color: white;
       outline-color: #009999 !important;
       border-color: #009999 !important;
+    }
+  }
+  input[type=checkbox]{
+    border-radius: 0;
+    width: inherit;
+    position:relative !important;
+    margin: 0;
+    outline: 0;
+    &:visited, &:active{
+      outline: 0;
     }
   }
   a {
@@ -64,5 +74,18 @@ form{
     display: inline-block;
     vertical-align: middle;
   }
-}
+  .alert {
+    border-radius: 0;
+  }
+  .checkbox {
+    span {
+      margin-left: 10px;
+      font-weight: normal;
+    }
+  }
 
+  #session_remember_me {
+    width: auto;
+    margin-left: 0;
+  }
+}
