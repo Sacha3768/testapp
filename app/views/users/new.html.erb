@@ -1,34 +1,74 @@
-<% provide(:title, 'S\'inscrire')%>
+<% provide(:title, 'S\'inscrire') %>
+
 
 <div class="row">
-    <div class="col-md-4 col-md-offset-4">
-        <%= form_for(@user) do |f| %>
+    <div class="col-md-8 col-md-offset-4">
+        <%= form_for @user, html: {class: "form-horizontal"} do |f| %>
+
             <%= f.label :pseudo %>
-            <%= f.text_field :pseudo %>
-            <% if @user.errors[:pseudo].any? %>
-                <p class="error_right"><%= f.label @user.errors[:pseudo].first %></p>
-            <% end %>
 
+            <!-- Nesting Starts  -->
+            <div class="row">
+                <div class="col-md-6">
+                    <%= f.text_field :pseudo %>
+                </div>
+                <div class="col-md-6 error_right">
+                    <% if @user.errors[:pseudo].any? %>
+                        <%= label_tag @user.errors[:pseudo].first %>
+                    <% end %>
+                </div>
+            </div>
             <%= f.label :email %>
-            <%= f.email_field :email %>
-            <% if @user.errors[:email].any? %>
-                <p class="error_right"><%= f.label @user.errors[:email].first %></p>
-            <% end %>
 
-            <%= f.label :password, "Mot de passe" %>
-            <%= f.password_field :password %>
-            <% if @user.errors[:password].any? %>
-                <p class="error_right"><%= f.label @user.errors[:password].first %></p>
-            <% end %>
+            <!-- Nesting Starts  -->
+            <div class="row">
+                <div class="col-md-6">
+                    <%= f.email_field :email %>
+                </div>
+                <div class="col-md-6 error_right">
+                    <% if @user.errors[:email].any? %>
+                        <%= label_tag @user.errors[:email].first %>
+                    <% end %>
+                </div>
+            </div>
+            <%= f.label :password%>
 
-            <%= f.label :password_confirmation, "Confirmation du mot de passe" %>
-            <%= f.password_field :password_confirmation %>
-            <% if @user.errors[:password_confirmation].any? %>
-                <p class="error_right"><%= @user.errors[:password_confirmation].first %></p>
-            <% end %>
+            <!-- Nesting Starts  -->
+            <div class="row">
+                <div class="col-md-6">
+                    <%= f.password_field  :password %>
+                </div>
+                <div class="col-md-6 error_right">
+                    <% if @user.errors[:password].any? %>
+                        <%= label_tag @user.errors[:password].first %>
+                    <% end %>
+                </div>
+            </div>
+            <%= f.label :password_confirmation %>
 
-            <%= f.submit "S'enregister", class: "btn btn-primary" %>
-            <%= link_to("Déjà enregistré ?", "http://google.com") %>
-        <% end %>
+            <!-- Nesting Starts  -->
+            <div class="row">
+                <div class="col-md-6">
+                    <%= f.password_field  :password_confirmation %>
+                </div>
+                <div class="col-md-6 error_right">
+                    <% if @user.errors[:password_confirmation].any? %>
+                        <%= label_tag @user.errors[:password_confirmation].first %>
+                    <% end %>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <%= f.submit "S'enregister", class: "btn btn-primary" %>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <%= link_to("Déjà enregistré ?", "http://google.com") %>
+                </div>
+            </div>
+            <% end %>
     </div>
 </div>

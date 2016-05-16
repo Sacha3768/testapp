@@ -24,6 +24,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       redirect_to user_url(@user.pseudo)
+      flash[:success] = "Bienvenue sur " + $NAME_SERVER
     else
       render 'new'
     end
