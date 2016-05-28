@@ -1,25 +1,26 @@
 <nav>
     <ul class="navul">
-        <%= link_to "Accueil", root_path, class: "active" %>
-        <%= link_to "Boutique", '#' %>
-        <%= link_to "News", '#' %>
+        <%= nav_link "Accueil", root_path %>
+        <%= nav_link "Boutique", items_path %>
+        <%= nav_link "News", '#' %>
         <%= link_to image_tag('logo.png', id: "logo"), "#", id: "linklogo", remote: true %>
-        <%= link_to "Forum", '#' %>
-        <%= link_to "Voter", '#' %>
+        <%= nav_link "Forum", '#' %>
+        <%= nav_link "Voter", '#' %>
         <% if logged_in? %>
-            <div class="dropdown">
-                <p  clasclass="compte">
+            <%= content_tag(:div, class: current_page?(user_path(current_user.pseudo)) ? 'active dropdown' : 'dropdown') do %>
+                <p class="compte">
                     Compte <b class="caret"></b>
                 </p>
+
                 <ul class="dropdown-menu">
-                    <li><%= link_to "Profile", user_url(current_user.pseudo) %></li>
-                    <li><%= link_to "Options", '#' %></li>
+                    <li><%= nav_link "Profile", user_path(current_user.pseudo) %></li>
+                    <li><%= nav_link "Options", '#' %></li>
                     <li class="divider"></li>
                     <li>
                         <%= link_to "Deconnexion", logout_path, method: "delete" %>
                     </li>
                 </ul>
-            </div>
+            <% end %>
         <% else %>
             <%= link_to "Connexion", login_path %>
         <% end %>

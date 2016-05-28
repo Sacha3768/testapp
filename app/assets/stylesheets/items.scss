@@ -1,0 +1,38 @@
+// Place all the styles related to the items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.item {
+  margin-bottom: 100px;
+  text-align: center;
+  font-family: "Anonymous Pro", "Inconsolata", "Menlo", "Consolas", "Bitstream Vera Sans Mono", "Courier New", monospace;
+  font-size: 1em;
+  text-transform: uppercase;
+  border: solid darkcyan 1px;
+  padding: 0;
+  .item-title{
+    font-size: 1.5em;
+    background-color: darkcyan;
+    color: white;
+    padding: 30px;
+  }
+  .item-price{
+    background-color: #333;
+    color: white;
+  }
+  .item-desc, .item-price, .item-buy{
+    padding: 20px;
+  }
+  .item-buy input[type=submit]{
+    text-transform: uppercase;
+    border: solid darkcyan 1px;
+    padding: 5px 20px;
+    color: darkcyan;
+    background-color: white;
+    outline: 0;
+    &:hover{
+      background-color: darkcyan;
+      color: white;
+    }
+  }
+}

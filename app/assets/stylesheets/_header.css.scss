@@ -9,7 +9,6 @@ nav {
     min-width: 700px;
     text-align: center;
     .dropdown {
-      min-width: 100px;
       display: table-cell;
       color: darkcyan;
       font-family: "Anonymous Pro", "Inconsolata", "Menlo", "Consolas", "Bitstream Vera Sans Mono", "Courier New", monospace;
@@ -26,6 +25,7 @@ nav {
       box-shadow:none;
       border:none;
       top: 98%;
+      min-width: 100px !important;
       width: 100%;
     }
 
@@ -35,7 +35,6 @@ nav {
     }
 
     .dropdown-menu li a {
-      color: darkcyan;
       padding: 5px 0;
       text-align: center;
       display: block;

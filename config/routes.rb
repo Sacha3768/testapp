@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get    'connexion'   => 'sessions#new'
   post   'connexion'   => 'sessions#create', as: 'login'
   delete 'deconnexion'  => 'sessions#destroy', as: 'logout'
+  resources :items, path: "boutique"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

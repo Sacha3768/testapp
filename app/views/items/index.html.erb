@@ -1,0 +1,54 @@
+<% provide(:title, 'Boutique' )%>
+
+<div class="row">
+    <% @items.each do |item| %>
+        <div class="col-md-4">
+            <div class="item">
+                <div class="item-title">
+                    <p>Nom de l'item</p>
+                </div>
+                <div class="item-price">
+                    <p>Prix de l'item</p>
+                </div>
+                <div class="item-desc">
+                    <p>Description de l'item</p>
+                </div>
+                <div class="item-buy">
+                    <input type="submit">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="item">
+                <div class="item-title">
+                    <p>Nom de l'item</p>
+                </div>
+                <div class="item-price">
+                    <p>Prix de l'item</p>
+                </div>
+                <div class="item-desc">
+                    <p>Description de l'item</p>
+                </div>
+                <div class="item-buy">
+                    <input type="submit">
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="item">
+                <div class="item-title">
+                    <p>Nom de l'item</p>
+                </div>
+                <div class="item-price">
+                    <p>Prix de l'item</p>
+                </div>
+                <div class="item-desc">
+                    <p>Description de l'item</p>
+                </div>
+                <div class="item-buy">
+                    <input type="submit">
+                </div>
+            </div>
+        </div>
+    <% end %>
+</div>
