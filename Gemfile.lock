@@ -167,7 +167,7 @@ DEPENDENCIES
   jquery-rails
   jquery-turbolinks
   pg
-  puma
+  puma (= 3.4.0)
   rails (= 4.2.6)
   rails_12factor
   sass-rails (~> 5.0)
